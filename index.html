@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Navavedam Wellness AI</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -17,21 +17,17 @@ body {
   font-family: 'Jost', sans-serif; background: var(--cream);
   color: var(--text); min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden; position: relative;
+  overflow: hidden;
 }
 body::before {
   content: ''; position: fixed; inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,149,108,0.12) 0%, transparent 60%),
+  background: radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200,149,108,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 90% 100%, rgba(61,90,71,0.1) 0%, transparent 60%);
   pointer-events: none;
 }
-.leaf { position: fixed; pointer-events: none; opacity: 0.05; }
-.leaf1 { top: -20px; left: -20px; font-size: 120px; transform: rotate(-30deg); }
-.leaf2 { bottom: -20px; right: -20px; font-size: 100px; transform: rotate(150deg); }
 .app {
   position: relative; z-index: 1; width: 100%; max-width: 780px;
-  height: 100vh; max-height: 100vh; display: flex; flex-direction: column; padding: 12px;
+  height: 100vh; display: flex; flex-direction: column; padding: 12px;
 }
 .header {
   background: var(--forest); border-radius: 20px 20px 0 0;
@@ -50,151 +46,65 @@ body::before {
   0%,100% { box-shadow: 0 4px 16px rgba(201,168,76,0.35); }
   50% { box-shadow: 0 4px 26px rgba(201,168,76,0.55); }
 }
-.brand-text h1 {
-  font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600;
-  color: var(--cream); letter-spacing: 0.3px; line-height: 1;
-}
-.brand-text p {
-  font-size: 11px; color: rgba(250,246,240,0.6);
-  margin-top: 2px; letter-spacing: 0.8px; text-transform: uppercase;
-}
-.online-pill {
-  display: flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px; padding: 5px 12px;
-  font-size: 11px; color: rgba(250,246,240,0.8); letter-spacing: 0.5px;
-}
-.pulse {
-  width: 6px; height: 6px; background: #6fcf6f;
-  border-radius: 50%; animation: pulse 2s ease-in-out infinite;
-}
+.brand-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--cream); line-height: 1; }
+.brand-text p { font-size: 11px; color: rgba(250,246,240,0.6); margin-top: 2px; letter-spacing: 0.8px; text-transform: uppercase; }
+.online-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 5px 12px; font-size: 11px; color: rgba(250,246,240,0.8); }
+.pulse { width: 6px; height: 6px; background: #6fcf6f; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
-.filter-bar {
-  background: var(--warm); border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border); padding: 10px 14px;
-  display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
-}
+.filter-bar { background: var(--warm); border-left: 1px solid var(--border); border-right: 1px solid var(--border); padding: 10px 14px; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex-shrink: 0; }
 .filter-bar::-webkit-scrollbar { display: none; }
-.filter-chip {
-  padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 500;
-  border: 1px solid var(--border); background: transparent; color: var(--text-muted);
-  cursor: pointer; white-space: nowrap; transition: all 0.18s; font-family: 'Jost', sans-serif;
-}
-.filter-chip:hover, .filter-chip.active {
-  background: var(--forest); color: var(--cream); border-color: var(--forest);
-}
-.chat {
-  flex: 1; overflow-y: auto; padding: 18px 16px; background: var(--surface);
-  border-left: 1px solid var(--border); border-right: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 16px; scroll-behavior: smooth;
-}
+.filter-chip { padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; white-space: nowrap; transition: all 0.18s; font-family: 'Jost', sans-serif; }
+.filter-chip:hover, .filter-chip.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+.chat { flex: 1; overflow-y: auto; padding: 18px 16px; background: var(--surface); border-left: 1px solid var(--border); border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 16px; scroll-behavior: smooth; }
 .chat::-webkit-scrollbar { width: 3px; }
 .chat::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 .msg { display: flex; gap: 10px; animation: fadeUp 0.3s ease both; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 .msg.user { flex-direction: row-reverse; }
-.av {
-  width: 34px; height: 34px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px; flex-shrink: 0; margin-top: 2px;
-}
+.av { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
 .av.bot { background: var(--forest); color: var(--cream); }
 .av.user { background: var(--warm); border: 1px solid var(--border); }
-.bubble { max-width: 72%; padding: 12px 16px; border-radius: 18px; font-size: 14px; line-height: 1.7; }
-.msg.bot .bubble {
-  background: white; border: 1px solid var(--border); border-top-left-radius: 4px;
-  color: var(--text); box-shadow: 0 2px 12px var(--shadow);
-}
+.bubble { max-width: 75%; padding: 12px 16px; border-radius: 18px; font-size: 14px; line-height: 1.7; }
+.msg.bot .bubble { background: white; border: 1px solid var(--border); border-top-left-radius: 4px; color: var(--text); box-shadow: 0 2px 12px var(--shadow); }
 .msg.user .bubble { background: var(--forest); color: var(--cream); border-top-right-radius: 4px; }
-.bot-name {
-  font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 600;
-  color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;
-}
-.prod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 8px; margin-top: 10px; }
-.prod-card {
-  background: var(--warm); border: 1px solid var(--border); border-radius: 12px;
-  padding: 12px; cursor: pointer; transition: all 0.2s;
-}
+.bot-name { font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.prod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; margin-top: 10px; }
+.prod-card { background: var(--warm); border: 1px solid var(--border); border-radius: 12px; padding: 12px; cursor: pointer; transition: all 0.2s; }
 .prod-card:hover { border-color: var(--bark); transform: translateY(-2px); box-shadow: 0 6px 18px var(--shadow); }
 .prod-card .icon { font-size: 22px; margin-bottom: 6px; }
 .prod-card .pname { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
 .prod-card .pprice { font-size: 12px; color: var(--forest-light); font-weight: 600; }
-.prod-card .pcat { font-size: 10px; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+.prod-card .pcat { font-size: 10px; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; }
 .quick-replies { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.qr {
-  padding: 5px 12px; border-radius: 20px; font-size: 12px;
-  border: 1px solid var(--border); background: var(--warm); color: var(--text-muted);
-  cursor: pointer; transition: all 0.18s; font-family: 'Jost', sans-serif;
-}
+.qr { padding: 5px 12px; border-radius: 20px; font-size: 12px; border: 1px solid var(--border); background: var(--warm); color: var(--text-muted); cursor: pointer; transition: all 0.18s; font-family: 'Jost', sans-serif; }
 .qr:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
 .typing-wrap { display: flex; gap: 10px; align-items: center; }
-.typing-dots {
-  background: white; border: 1px solid var(--border); border-radius: 18px;
-  border-top-left-radius: 4px; padding: 12px 16px; display: flex; gap: 4px;
-  box-shadow: 0 2px 12px var(--shadow);
-}
-.typing-dots span {
-  width: 6px; height: 6px; background: var(--bark);
-  border-radius: 50%; animation: dotBounce 1.2s ease-in-out infinite;
-}
+.typing-dots { background: white; border: 1px solid var(--border); border-radius: 18px; border-top-left-radius: 4px; padding: 12px 16px; display: flex; gap: 4px; box-shadow: 0 2px 12px var(--shadow); }
+.typing-dots span { width: 6px; height: 6px; background: var(--bark); border-radius: 50%; animation: dotBounce 1.2s ease-in-out infinite; }
 .typing-dots span:nth-child(2) { animation-delay: 0.18s; }
 .typing-dots span:nth-child(3) { animation-delay: 0.36s; }
 @keyframes dotBounce { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-5px); opacity:1; } }
-.contact-form {
-  background: var(--warm); border: 1px solid var(--border);
-  border-radius: 14px; padding: 16px; margin-top: 10px;
-}
-.contact-form h4 {
-  font-family: 'Cormorant Garamond', serif; font-size: 15px;
-  font-weight: 600; color: var(--text); margin-bottom: 10px;
-}
-.cf-input, .cf-textarea {
-  width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px;
-  background: white; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--text);
-  outline: none; margin-bottom: 8px; transition: border-color 0.2s;
-}
+.contact-form { background: var(--warm); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-top: 10px; }
+.contact-form h4 { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.cf-input, .cf-textarea { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: white; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--text); outline: none; margin-bottom: 8px; transition: border-color 0.2s; }
 .cf-input:focus, .cf-textarea:focus { border-color: var(--bark); }
 .cf-textarea { resize: none; height: 70px; }
-.cf-btn {
-  background: var(--forest); color: var(--cream); border: none; border-radius: 8px;
-  padding: 9px 20px; font-family: 'Jost', sans-serif; font-size: 13px;
-  font-weight: 500; cursor: pointer; transition: background 0.2s;
-}
+.cf-btn { background: var(--forest); color: var(--cream); border: none; border-radius: 8px; padding: 9px 20px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; }
 .cf-btn:hover { background: var(--forest-light); }
-.input-area {
-  background: white; border: 1px solid var(--border); border-radius: 0 0 20px 20px;
-  padding: 12px 14px; display: flex; align-items: flex-end; gap: 10px;
-  flex-shrink: 0; box-shadow: 0 -2px 12px var(--shadow);
-}
-.input-box {
-  flex: 1; background: var(--warm); border: 1px solid var(--border);
-  border-radius: 12px; padding: 9px 14px; display: flex;
-  align-items: flex-end; transition: border-color 0.2s;
-}
+.input-area { background: white; border: 1px solid var(--border); border-radius: 0 0 20px 20px; padding: 12px 14px; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0; box-shadow: 0 -2px 12px var(--shadow); }
+.input-box { flex: 1; background: var(--warm); border: 1px solid var(--border); border-radius: 12px; padding: 9px 14px; display: flex; align-items: flex-end; transition: border-color 0.2s; }
 .input-box:focus-within { border-color: var(--bark); box-shadow: 0 0 0 3px rgba(200,149,108,0.1); }
-textarea#inp {
-  flex: 1; background: transparent; border: none; outline: none;
-  font-family: 'Jost', sans-serif; font-size: 14px; color: var(--text);
-  resize: none; max-height: 90px; line-height: 1.5; scrollbar-width: none;
-}
+textarea#inp { flex: 1; background: transparent; border: none; outline: none; font-family: 'Jost', sans-serif; font-size: 14px; color: var(--text); resize: none; max-height: 90px; line-height: 1.5; scrollbar-width: none; }
 textarea#inp::placeholder { color: var(--text-muted); }
-textarea#inp::-webkit-scrollbar { display: none; }
-.send {
-  width: 38px; height: 38px; border-radius: 10px; background: var(--forest);
-  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s; flex-shrink: 0; box-shadow: 0 3px 10px rgba(61,90,71,0.3);
-  margin-left: 8px;
-}
+.send { width: 38px; height: 38px; border-radius: 10px; background: var(--forest); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; margin-left: 8px; box-shadow: 0 3px 10px rgba(61,90,71,0.3); }
 .send:hover { background: var(--forest-light); transform: scale(1.05); }
-.send:active { transform: scale(0.95); }
 .send svg { width: 16px; height: 16px; fill: var(--cream); }
-.footer { text-align: center; font-size: 10px; color: var(--text-muted); padding: 5px 0 0; letter-spacing: 0.4px; flex-shrink: 0; }
+.footer { text-align: center; font-size: 10px; color: var(--text-muted); padding: 5px 0 0; flex-shrink: 0; }
 .footer a { color: var(--bark-dark); text-decoration: none; }
+.debug { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 8px 12px; font-size: 11px; color: #856404; margin: 4px 0; display: none; }
 </style>
 </head>
 <body>
-<div class="leaf leaf1">🌿</div>
-<div class="leaf leaf2">🌿</div>
 <div class="app">
   <div class="header">
     <div class="brand">
@@ -204,23 +114,23 @@ textarea#inp::-webkit-scrollbar { display: none; }
         <p>Natural · Ayurvedic · Pure</p>
       </div>
     </div>
-    <div class="online-pill"><div class="pulse"></div>Online</div>
+    <div class="online-pill"><div class="pulse"></div>Veda AI</div>
   </div>
   <div class="filter-bar">
-    <button class="filter-chip active" onclick="setFilter('all',this)">All</button>
-    <button class="filter-chip" onclick="setFilter('Face Care',this)">Face Care</button>
-    <button class="filter-chip" onclick="setFilter('Hair Care',this)">Hair Care</button>
-    <button class="filter-chip" onclick="setFilter('Body Care',this)">Body Care</button>
-    <button class="filter-chip" onclick="setFilter('Lip Care',this)">Lip Care</button>
-    <button class="filter-chip" onclick="setFilter('Foot Care',this)">Foot Care</button>
-    <button class="filter-chip" onclick="setFilter('Baby Care',this)">Baby Care</button>
-    <button class="filter-chip" onclick="setFilter('Wellness Teas',this)">Wellness Teas</button>
-    <button class="filter-chip" onclick="setFilter('Natural Perfumes',this)">Perfumes</button>
+    <button class="filter-chip active" onclick="quickSend('',this)">Home</button>
+    <button class="filter-chip" onclick="quickSend('I have hair fall problem',this)">Hair Fall</button>
+    <button class="filter-chip" onclick="quickSend('I have dandruff',this)">Dandruff</button>
+    <button class="filter-chip" onclick="quickSend('I have acne and oily skin',this)">Acne</button>
+    <button class="filter-chip" onclick="quickSend('My skin is very dry',this)">Dry Skin</button>
+    <button class="filter-chip" onclick="quickSend('I have pigmentation and dark spots',this)">Pigmentation</button>
+    <button class="filter-chip" onclick="quickSend('I want anti aging products',this)">Anti Aging</button>
+    <button class="filter-chip" onclick="quickSend('Show me wellness teas',this)">Wellness Teas</button>
   </div>
+  <div id="debug" class="debug"></div>
   <div class="chat" id="chat"></div>
   <div class="input-area">
     <div class="input-box">
-      <textarea id="inp" placeholder="Ask about products, ingredients, pricing…" rows="1"
+      <textarea id="inp" placeholder="Describe your skin or hair concern…" rows="1"
         onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
     </div>
     <button class="send" onclick="send()">
@@ -228,206 +138,260 @@ textarea#inp::-webkit-scrollbar { display: none; }
     </button>
   </div>
   <div class="footer">
-    <a href="https://navavedamwellness.com" target="_blank">navavedamwellness.com</a> · Powered by Groq AI
+    <a href="https://navavedamwellness.com" target="_blank">navavedamwellness.com</a> · Veda — Navavedam AI Wellness Advisor
   </div>
 </div>
+
 <script>
-const PRODUCTS = [
-  {name:"Brightening Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Lemon extract brightening formula for all skin types.",main:["Lemon Extract","Sandalwood","Turmeric"],skin:"All types",icon:"✨"},
-  {name:"Hydrating Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Coconut-powered hydrating cleanser for dry skin.",main:["Coconut","Rice","Arrowroot"],skin:"Dry",icon:"💧"},
-  {name:"Anti Acne Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Neem-powered acne-fighting formula.",main:["Neem","Arrowroot Powder","French Green Clay"],skin:"Acne Prone",icon:"🌿"},
-  {name:"Vitamin C Glow Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Dragon fruit antioxidant glow formula.",main:["Kaolin Clay","Goat Milk","Dragon Fruit"],skin:"All types",icon:"🌟"},
-  {name:"Anti Aging Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Gotu Kola herb of longevity for skin renewal.",main:["Gotu Kola","Kaolin Clay","Wild Turmeric"],skin:"All types",icon:"⏳"},
-  {name:"Smoothing Powdered Face Wash",cat:"Face Care",sub:"Powder Face Wash",qty1:50,mrp1:500,desc:"Rice starch porcelain complexion ritual.",main:["Rice Starch","Multani Mitti","Calamine Clay"],skin:"All types",icon:"🍚"},
-  {name:"Shata Dhuta Ghritam",cat:"Face Care",sub:"Moisturiser",qty1:30,mrp1:500,desc:"Pure ghee washed 100 times per Ayurvedic tradition.",main:["Pure Desi Ghee","Water Wash"],skin:"Normal",icon:"🏺"},
-  {name:"Gotu Kola Shata Ghritam",cat:"Face Care",sub:"Moisturiser",qty1:30,mrp1:650,desc:"Gotu Kola with traditional ghrita preparation.",main:["Gotu Kola Extract","A2 Ghee","Orange Essential Oil"],skin:"Normal",icon:"🌱"},
-  {name:"Manjistha Shata Ghritam",cat:"Face Care",sub:"Moisturiser",qty1:30,mrp1:650,desc:"Manjishtha extract with 100-times washed A2 ghee.",main:["Manjishtha Extract","A2 Ghee","Sandalwood Essential Oil"],skin:"Normal",icon:"🌸"},
-  {name:"Saffron Shata Ghritam",cat:"Face Care",sub:"Moisturiser",qty1:30,mrp1:650,desc:"Rare Kashmiri saffron with nourishing A2 ghee.",main:["Saffron Strands","A2 Ghee","Lavender Essential Oil"],skin:"Normal",icon:"🌼"},
-  {name:"Vitamin C Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:1000,qty2:20,mrp2:1700,desc:"Oil-based vitamin C with jojoba. Dissolves tan.",main:["Jojoba Oil","Orange Essential Oil","Carrot Seed Oil"],skin:"Normal",icon:"🍊"},
-  {name:"24K Gold Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:2500,qty2:20,mrp2:4250,desc:"Luxury argan and rosehip with real 24k gold dust.",main:["Argan Oil","Rosehip Oil","24K Pure Gold Dust"],skin:"All types",icon:"✨"},
-  {name:"Kumkumadi Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:1400,qty2:20,mrp2:2400,desc:"18 herbs Ayurvedic formula for radiance.",main:["Lodhra","Tulasi","Saffron"],skin:"All types",icon:"👑"},
-  {name:"Moringa Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:350,qty2:20,mrp2:600,desc:"Night serum with miracle tree moringa.",main:["Moringa Infused Coconut Oil","Coco Butter","Lavender Essential Oil"],skin:"Normal, Dry",icon:"🌙"},
-  {name:"Grape Seed Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:600,qty2:20,mrp2:1000,desc:"Lightweight oil-balancing serum for oily skin.",main:["Grape Seed Oil","Moringa Leaf"],skin:"Oily, Acne Prone, Combination",icon:"🍇"},
-  {name:"Coffee Serum",cat:"Face Care",sub:"Serums",qty1:10,mrp1:900,qty2:20,mrp2:1500,desc:"Coffee, jojoba, rosehip and argan blend.",main:["Coffee Essential Oil","Jojoba Oil","Rosehip Oil"],skin:"All types",icon:"☕"},
-  {name:"Manjistha Sleeping Mask",cat:"Face Care",sub:"Sleeping Mask",qty1:25,mrp1:250,desc:"Overnight Manjishtha extract treatment.",main:["Manjishtha Extract","Aloe Vera","Sandalwood Essential Oil"],skin:"All types",icon:"🌙"},
-  {name:"Red Wine Sleeping Mask",cat:"Face Care",sub:"Sleeping Mask",qty1:25,mrp1:250,desc:"Antioxidant red wine overnight mask.",main:["Red Wine","Aloe Vera","Rose Essential Oil"],skin:"Normal, Dry",icon:"🍷"},
-  {name:"Expresso Coffee Sleeping Mask",cat:"Face Care",sub:"Sleeping Mask",qty1:25,mrp1:250,desc:"Energizing coffee overnight treatment.",main:["Coffee","Aloe Vera"],skin:"All types",icon:"☕"},
-  {name:"Moringa Sleeping Mask",cat:"Face Care",sub:"Sleeping Mask",qty1:25,mrp1:250,desc:"Moringa and Tulsi purifying overnight mask.",main:["Moringa","Aloe Vera","Tulsi"],skin:"Normal, Oily",icon:"🌿"},
-  {name:"Moringa Face Scrub",cat:"Face Care",sub:"Face Scrubs",qty1:50,mrp1:500,desc:"Traditional moringa scrub for all skin types except acne-prone.",main:["Moringa Powder","Black Rice","Brown Sugar"],skin:"Oily, Combination, Dry, Normal",icon:"✨"},
-  {name:"Oats Face Scrub",cat:"Face Care",sub:"Face Scrubs",qty1:50,mrp1:500,desc:"Soothing oats and coffee gentle scrub.",main:["Bentonite Clay","Oats","Coffee"],skin:"All types",icon:"🌾"},
-  {name:"Neem Face Scrub",cat:"Face Care",sub:"Face Scrubs",qty1:50,mrp1:500,desc:"Nine sacred herbs for acne and oily skin.",main:["Neem Powder","Tulsi Powder","Kaolin Clay"],skin:"Acne Prone, Oily",icon:"🌿"},
-  {name:"Wild Rose Mist",cat:"Face Care",sub:"Toner",qty1:50,mrp1:350,desc:"Pure Rose Hydrosol traditional beauty elixir.",main:["Rose Petals Hydrosol","Aqua"],skin:"All types",icon:"🌹"},
-  {name:"Manjistha Cold Processed Soap",cat:"Body Care",sub:"Cold Processed Soap",qty1:125,mrp1:350,desc:"Pure manjistha for radiant skin.",main:["Manjishtha Powder","Coconut Oil","Ghee"],skin:"Normal, Dry, Combination, Sensitive",icon:"🧼"},
-  {name:"Moringa Cold Processed Soap",cat:"Body Care",sub:"Cold Processed Soap",qty1:125,mrp1:350,desc:"Tree of Life moringa nutrient-dense bar.",main:["Moringa Powder","Olive Oil","Shea Butter"],skin:"Normal, Combination",icon:"🌳"},
-  {name:"Pink Clay Cold Processed Soap",cat:"Body Care",sub:"Cold Processed Soap",qty1:125,mrp1:350,desc:"French pink clay and Himalayan salt spa bar.",main:["French Pink Clay","Himalayan Salt","Shea Butter"],skin:"All types",icon:"🌸"},
-  {name:"Gotu Kola Cold Processed Soap",cat:"Body Care",sub:"Cold Processed Soap",qty1:125,mrp1:350,desc:"Ancient healing Gotu Kola luxury bar.",main:["Gotu Kola Powder","Grape Seed Oil","Coco Butter"],skin:"All types",icon:"🌿"},
-  {name:"Red Wine Soap",cat:"Body Care",sub:"Melt & Pour Soap",qty1:100,mrp1:200,desc:"Non-alcoholic red wine with rose essence.",main:["Soap Base","Non-Alcoholic Red Wine","Rose Essential Oil"],skin:"All types",icon:"🍷"},
-  {name:"Holy Basil Soap",cat:"Body Care",sub:"Melt & Pour Soap",qty1:100,mrp1:200,desc:"Divine Tulsi Ayurvedic soap bar.",main:["Tulasi Powder","Aloe Vera Base","Moringa Powder"],skin:"All types",icon:"🌿"},
-  {name:"Oats & Honey Soap",cat:"Body Care",sub:"Melt & Pour Soap",qty1:100,mrp1:200,desc:"Comforting oats and honey golden bar.",main:["Goat Milk","Oats","Honey"],skin:"All types",icon:"🍯"},
-  {name:"Aloe Vera Loofa Soap",cat:"Body Care",sub:"Melt & Pour Soap",qty1:100,mrp1:200,desc:"Natural loofa exfoliation with aloe healing.",main:["Aloe Vera Base","Loofah","Lavender Essential Oil"],skin:"All types",icon:"🌵"},
-  {name:"Coffee Whipped Body Scrub",cat:"Body Care",sub:"Body Scrub",qty1:30,mrp1:350,desc:"Premium coffee grounds with coco butter.",main:["Coco Butter","Coffee Extract","Coffee Grains"],skin:"All types",icon:"☕"},
-  {name:"Strawberry Whipped Body Scrub",cat:"Body Care",sub:"Body Scrub",qty1:30,mrp1:350,desc:"Strawberry extract with shea and cranberry seeds.",main:["Strawberry Extract","Shea Butter","Cranberry Seeds"],skin:"All types",icon:"🍓"},
-  {name:"Hibiscus Whipped Body Scrub",cat:"Body Care",sub:"Body Scrub",qty1:30,mrp1:350,desc:"Kaolin clay, hibiscus and dead sea mud scrub.",main:["Kaolin Clay","Hibiscus Powder","Dead Sea Mud"],skin:"All types",icon:"🌺"},
-  {name:"Calendula Milk Bath Salt",cat:"Body Care",sub:"Bath Salt",qty1:100,mrp1:200,desc:"Calendula, oats and Himalayan salt soak.",main:["Calendula Flowers","Lavender Buds","Epsom Salt"],skin:"All types",icon:"🌼"},
-  {name:"Lavender Dreams Floral Bath Salt",cat:"Body Care",sub:"Bath Salt",qty1:100,mrp1:200,desc:"Serenity soak — lavender and Himalayan salt.",main:["Epsom Salt","Lavender","Himalayan Pink Salt"],skin:"All types",icon:"💜"},
-  {name:"Peppermint Tea Tree Bath Salt",cat:"Body Care",sub:"Bath Salt",qty1:100,mrp1:200,desc:"Therapeutic detox and purifying soak.",main:["Himalayan Pink Salt","Tea Tree Essential Oil","Peppermint Essential Oil"],skin:"Oily, Combination",icon:"🫧"},
-  {name:"Mindful Bath Oil",cat:"Body Care",sub:"Bath Oil",qty1:100,mrp1:700,desc:"Pre-bath ritual with jojoba and lavender.",main:["Jojoba Oil","Almond Oil","Orange Essential Oil"],skin:"All types",icon:"🛁"},
-  {name:"Lavender & Clay Bath Powder",cat:"Body Care",sub:"Bath Powder",qty1:100,mrp1:500,desc:"13 natural ingredients with kaolin clay.",main:["Kaolin Clay","Lavender Buds","Dead Sea Mud"],skin:"All types",icon:"🌸"},
-  {name:"Beetroot Lip Balm",cat:"Lip Care",sub:"Lip Balm",qty1:10,mrp1:150,desc:"Natural beetroot pink with beeswax and shea.",main:["Beetroot","Bee Wax","Shea Butter"],skin:"N/A",icon:"❤️"},
-  {name:"Strawberry Lip Balm",cat:"Lip Care",sub:"Lip Balm",qty1:10,mrp1:150,desc:"Shea butter and natural strawberry essence.",main:["Strawberry","Bee Wax","Shea Butter"],skin:"N/A",icon:"🍓"},
-  {name:"Beetroot Lip Scrub",cat:"Lip Care",sub:"Lip Scrub",qty1:10,mrp1:150,desc:"Gentle beetroot exfoliator with nourishing oils.",main:["Beetroot","Coconut Oil","Almond Oil"],skin:"N/A",icon:"🌹"},
-  {name:"Strawberry Lip Scrub",cat:"Lip Care",sub:"Lip Scrub",qty1:10,mrp1:150,desc:"Sweet strawberry luxury lip scrub.",main:["Strawberry","Coconut Oil","Almond Oil"],skin:"N/A",icon:"🍓"},
-  {name:"Lip Sleeping Mask",cat:"Lip Care",sub:"Sleeping Mask",qty1:15,mrp1:250,desc:"Rich overnight shea and castor oil lip treatment.",main:["Shea Butter","Almond Butter","Castor Oil"],skin:"N/A",icon:"💋"},
-  {name:"Anti Dandruff Hair Oil",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:550,desc:"Nine natural ingredients for dandruff control.",main:["Neem Oil","Tea Tree Essential Oil","Coconut Oil"],skin:"N/A",icon:"🌿"},
-  {name:"Hair Growth Oil",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:550,desc:"15 ingredients for maximum hair growth.",main:["Bhringraj Powder","Hibiscus","Rosemary Essential Oil"],skin:"N/A",icon:"🌱"},
-  {name:"Hair Immunity Booster",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:550,desc:"Immunity-building concept applied to hair health.",main:["Coconut Oil","Brahmi","Bhringraj"],skin:"N/A",icon:"💪"},
-  {name:"Hair Fall Control Oil",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:550,desc:"Precision formula for excessive hair fall.",main:["Brahmi","Bhringraj","Lavender Essential Oil"],skin:"N/A",icon:"✋"},
-  {name:"Anti Lice Hair Oil",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:550,desc:"Potent Ayurvedic lice-fighting blend.",main:["Neem Oil","Camphor","Tea Tree Essential Oil"],skin:"N/A",icon:"🛡️"},
-  {name:"Dry Hair Care Oil",cat:"Hair Care",sub:"Hair Oil",qty1:100,mrp1:700,desc:"Avocado, almond and walnut nourishing oils.",main:["Avocado Oil","Almond Oil","Rosemary Essential Oil"],skin:"N/A",icon:"💧"},
-  {name:"Amla Shampoo",cat:"Hair Care",sub:"Shampoo",qty1:100,mrp1:450,qty2:200,mrp2:800,desc:"Premium Amla liquid shampoo.",main:["Aloe Vera","Amla","Vetiver"],skin:"N/A",icon:"🫙"},
-  {name:"Hibiscus Shampoo",cat:"Hair Care",sub:"Shampoo",qty1:100,mrp1:450,qty2:200,mrp2:800,desc:"Botanical hibiscus hair growth shampoo.",main:["Hibiscus","Amla","Vetiver"],skin:"N/A",icon:"🌺"},
-  {name:"Soap Nut Powder Shampoo",cat:"Hair Care",sub:"Shampoo",qty1:100,mrp1:350,desc:"15 Ayurvedic herbs traditional shampoo.",main:["Soap Nuts","Shikakai","Amla"],skin:"N/A",icon:"🪨"},
-  {name:"Shikakai Shampoo Bar",cat:"Hair Care",sub:"Shampoo Bar",qty1:100,mrp1:450,qty2:50,mrp2:250,desc:"Nature's own Shikakai shampoo bar.",main:["Shikakai","Methi","Cocoa Butter"],skin:"N/A",icon:"🍀"},
-  {name:"Rice Clarity Shampoo Bar",cat:"Hair Care",sub:"Shampoo Bar",qty1:100,mrp1:450,qty2:50,mrp2:250,desc:"Ancient rice water clarifying shampoo bar.",main:["Rice","Kaolin Clay","Shea Butter"],skin:"N/A",icon:"🍚"},
-  {name:"Amla Shampoo Bar",cat:"Hair Care",sub:"Shampoo Bar",qty1:100,mrp1:450,qty2:50,mrp2:250,desc:"India's treasured Amla in a shampoo bar.",main:["Amla Powder","Kaolin Clay","Cocoa Butter"],skin:"N/A",icon:"🫙"},
-  {name:"Hibiscus Red Shampoo Bar",cat:"Hair Care",sub:"Shampoo Bar",qty1:100,mrp1:450,qty2:50,mrp2:250,desc:"Magnificent Hibiscus luxury shampoo bar.",main:["Hibiscus Powder","Rhassoul Clay","Shea Butter"],skin:"N/A",icon:"🌺"},
-  {name:"Nutri Rich Henna",cat:"Hair Care",sub:"Hair Colour",qty1:100,mrp1:350,desc:"Complete hair wellness with 6 Ayurvedic herbs.",main:["Henna","Amla","Hibiscus"],skin:"N/A",icon:"🎨"},
-  {name:"Pure Indigo Powder",cat:"Hair Care",sub:"Hair Colour",qty1:100,mrp1:350,desc:"One ingredient pure indigo powder.",main:["Indigo Leaves Powder"],skin:"N/A",icon:"💙"},
-  {name:"Lavender Foot Butter",cat:"Foot Care",sub:"Foot Butter",qty1:30,mrp1:450,desc:"Shea butter, lavender and kumkumadi foot care.",main:["Shea Butter","Lavender Essential Oil","Kumkumadi Oil"],skin:"All types",icon:"🦶"},
-  {name:"Pure Petals Foot Soak",cat:"Foot Care",sub:"Foot Soak",qty1:100,mrp1:200,desc:"Rose petals, jasmine and lavender foot soak.",main:["Rose Petals","Jasmine","Lavender"],skin:"All types",icon:"🌹"},
-  {name:"Neem & Peppermint Foot Soak",cat:"Foot Care",sub:"Foot Soak",qty1:100,mrp1:200,desc:"Neem and peppermint detox foot soak.",main:["Neem Powder","Peppermint Essential Oil","Tea Tree Essential Oil"],skin:"All types",icon:"🌿"},
-  {name:"Citrus Detox Foot Soak",cat:"Foot Care",sub:"Foot Soak",qty1:100,mrp1:200,desc:"Energizing orange citrus mineral foot soak.",main:["Epsom Salt","Orange Peels","Orange Essential Oil"],skin:"All types",icon:"🍊"},
-  {name:"Baby Massage Oil",cat:"Baby Care",sub:"Massage Oil",qty1:100,mrp1:600,desc:"Cold-pressed sesame, almond and coconut oils.",main:["Sesame Oil","Almond Oil","Coconut Oil"],skin:"All types",icon:"👶"},
-  {name:"Baby Bath Powder (Sunni Pindi)",cat:"Baby Care",sub:"Bath Powder",qty1:100,mrp1:350,desc:"13 sacred herbs ancient South Indian tradition.",main:["Sandalwood","Wild Turmeric","Green Gram"],skin:"All types",icon:"🌸"},
-  {name:"Blue Pea Refresh Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:200,desc:"Butterfly Pea and Lemongrass wellness blend.",main:["Blue Pea","Lemongrass"],skin:"N/A",icon:"🫖"},
-  {name:"Moringa Zen Fresh Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:200,desc:"Moringa with mint and lemongrass.",main:["Moringa","Mint","Lemongrass"],skin:"N/A",icon:"🌿"},
-  {name:"Moringa Immunity Blend Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:200,desc:"Immunity-boosting moringa, turmeric and ginger.",main:["Moringa","Ginger","Turmeric"],skin:"N/A",icon:"💪"},
-  {name:"Hibiscus Serene Blend Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:200,desc:"Hibiscus, mint and tulsi wellness blend.",main:["Hibiscus","Mint","Tulsi"],skin:"N/A",icon:"🌺"},
-  {name:"Hibiscus Fusion Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:200,desc:"Hibiscus, ginger and cinnamon immunity blend.",main:["Hibiscus","Ginger","Cinnamon"],skin:"N/A",icon:"🫚"},
-  {name:"Blue Pea Classic Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:350,desc:"Hand-picked pure butterfly pea flowers.",main:["Blue Pea Flowers (Sun Dried)"],skin:"N/A",icon:"💙"},
-  {name:"Moringa Classic Tea",cat:"Wellness Teas",sub:"Tea",qty1:25,mrp1:250,desc:"Pure sun-dried moringa leaves.",main:["Moringa (Sun Dried)"],skin:"N/A",icon:"🌿"},
-  {name:"Sunrise Natural Perfume",cat:"Natural Perfumes",sub:"Essential Oil Base",qty1:10,mrp1:1200,desc:"Lime, bergamot and sandalwood stress-relief blend.",main:["Lime Essential Oil","Bergamot Essential Oil","Sandalwood Essential Oil"],skin:"All types",icon:"🌅"},
-  {name:"Floral Natural Perfume",cat:"Natural Perfumes",sub:"Essential Oil Base",qty1:10,mrp1:1200,desc:"Rose, ylang ylang and geranium floral blend.",main:["Rose Essential Oil","Ylang Ylang Essential Oil","Geranium Essential Oil"],skin:"All types",icon:"🌸"},
-  {name:"Earthy Natural Perfume",cat:"Natural Perfumes",sub:"Essential Oil Base",qty1:10,mrp1:1200,desc:"Vetiver, patchouli and lavender grounding blend.",main:["Vetiver Essential Oil","Patchouli Essential Oil","Lavender Essential Oil"],skin:"All types",icon:"🌍"},
-  {name:"Focus Boost Natural Perfume",cat:"Natural Perfumes",sub:"Essential Oil Base",qty1:10,mrp1:1200,desc:"Sweet orange, peppermint and eucalyptus focus blend.",main:["Sweet Orange Essential Oil","Peppermint Essential Oil","Eucalyptus Essential Oil"],skin:"All types",icon:"🧠"},
-  {name:"Deep Sleep Natural Perfume",cat:"Natural Perfumes",sub:"Essential Oil Base",qty1:10,mrp1:1200,desc:"Lavender, chamomile and ylang ylang sleep blend.",main:["Lavender Essential Oil","Chamomile Essential Oil","Ylang Ylang Essential Oil"],skin:"All types",icon:"😴"},
-];
-
-function buildKB() {
-  let kb = `COMPANY: Navavedam Wellness | Website: https://navavedamwellness.com | Support: naturecare@navavedamwellness.com
-Philosophy: Traditional Ayurvedic wisdom, all-natural, chemical-free products. Price Range: ₹150–₹4,250\n\nPRODUCTS:\n`;
-  PRODUCTS.forEach(p => {
-    kb += `• ${p.name} | ${p.cat} | ₹${p.mrp1}/${p.qty1}gm${p.qty2?` or ₹${p.mrp2}/${p.qty2}gm`:''} | Skin: ${p.skin} | Ingredients: ${p.main.join(', ')} | ${p.desc}\n`;
-  });
-  return kb;
-}
-
-const SYSTEM = `You are the AI assistant for Navavedam Wellness, a premium natural Ayurvedic wellness brand.\n\n${buildKB()}\n\nRULES:\n1. ONLY answer using the above data. Never make up information.\n2. If question is outside your knowledge, say you don't have that info and suggest contacting naturecare@navavedamwellness.com — set show_contact:true.\n3. Never discuss competitors or unrelated topics.\n4. Be warm, helpful, match Ayurvedic wellness tone.\n5. Always mention prices in ₹.\n6. For recommendations suggest 2-4 products by exact names.\n\nRespond ONLY as valid JSON:\n{"reply":"your response","show_contact":false,"products":["Exact Product Name"]}`;
+const PRODUCTS = {
+  "Brightening Powdered Face Wash": {icon:"✨", price:"Rs.500/50gm", cat:"Face Care"},
+  "Hydrating Powdered Face Wash": {icon:"💧", price:"Rs.500/50gm", cat:"Face Care"},
+  "Anti Acne Powdered Face Wash": {icon:"🌿", price:"Rs.500/50gm", cat:"Face Care"},
+  "Vitamin C Glow Powdered Face Wash": {icon:"🌟", price:"Rs.500/50gm", cat:"Face Care"},
+  "Anti Aging Powdered Face Wash": {icon:"⏳", price:"Rs.500/50gm", cat:"Face Care"},
+  "Smoothing Powdered Face Wash": {icon:"🍚", price:"Rs.500/50gm", cat:"Face Care"},
+  "Shata Dhuta Ghritam": {icon:"🏺", price:"Rs.500/30gm", cat:"Moisturiser"},
+  "Gotu Kola Shata Ghritam": {icon:"🌱", price:"Rs.650/30gm", cat:"Moisturiser"},
+  "Manjistha Shata Ghritam": {icon:"🌸", price:"Rs.650/30gm", cat:"Moisturiser"},
+  "Saffron Shata Ghritam": {icon:"🌼", price:"Rs.650/30gm", cat:"Moisturiser"},
+  "Vitamin C Serum": {icon:"🍊", price:"Rs.1000/10ml", cat:"Serum"},
+  "24K Gold Serum": {icon:"✨", price:"Rs.2500/10ml", cat:"Serum"},
+  "Kumkumadi Serum": {icon:"👑", price:"Rs.1400/10ml", cat:"Serum"},
+  "Moringa Serum": {icon:"🌙", price:"Rs.350/10ml", cat:"Serum"},
+  "Grape Seed Serum": {icon:"🍇", price:"Rs.600/10ml", cat:"Serum"},
+  "Coffee Serum": {icon:"☕", price:"Rs.900/10ml", cat:"Serum"},
+  "Manjistha Sleeping Mask": {icon:"🌙", price:"Rs.250/25gm", cat:"Sleeping Mask"},
+  "Red Wine Sleeping Mask": {icon:"🍷", price:"Rs.250/25gm", cat:"Sleeping Mask"},
+  "Expresso Coffee Sleeping Mask": {icon:"☕", price:"Rs.250/25gm", cat:"Sleeping Mask"},
+  "Moringa Sleeping Mask": {icon:"🌿", price:"Rs.250/25gm", cat:"Sleeping Mask"},
+  "Moringa Face Scrub": {icon:"✨", price:"Rs.500/50gm", cat:"Face Scrub"},
+  "Oats Face Scrub": {icon:"🌾", price:"Rs.500/50gm", cat:"Face Scrub"},
+  "Neem Face Scrub": {icon:"🌿", price:"Rs.500/50gm", cat:"Face Scrub"},
+  "Wild Rose Mist Toner": {icon:"🌹", price:"Rs.350/50ml", cat:"Toner"},
+  "Anti Dandruff Hair Oil": {icon:"🌿", price:"Rs.550/100ml", cat:"Hair Oil"},
+  "Hair Growth Oil": {icon:"🌱", price:"Rs.550/100ml", cat:"Hair Oil"},
+  "Hair Immunity Booster Oil": {icon:"💪", price:"Rs.550/100ml", cat:"Hair Oil"},
+  "Hair Fall Control Oil": {icon:"✋", price:"Rs.550/100ml", cat:"Hair Oil"},
+  "Anti Lice Hair Oil": {icon:"🛡️", price:"Rs.550/100ml", cat:"Hair Oil"},
+  "Dry Hair Care Oil": {icon:"💧", price:"Rs.700/100ml", cat:"Hair Oil"},
+  "Amla Shampoo": {icon:"🫙", price:"Rs.450/100ml", cat:"Shampoo"},
+  "Hibiscus Shampoo": {icon:"🌺", price:"Rs.450/100ml", cat:"Shampoo"},
+  "Soap Nut Powder Shampoo": {icon:"🪨", price:"Rs.350/100gm", cat:"Shampoo"},
+  "Shikakai Shampoo Bar": {icon:"🍀", price:"Rs.450/100gm", cat:"Shampoo Bar"},
+  "Rice Clarity Shampoo Bar": {icon:"🍚", price:"Rs.450/100gm", cat:"Shampoo Bar"},
+  "Amla Shampoo Bar": {icon:"🫙", price:"Rs.450/100gm", cat:"Shampoo Bar"},
+  "Hibiscus Red Shampoo Bar": {icon:"🌺", price:"Rs.450/100gm", cat:"Shampoo Bar"},
+  "Nutri Rich Henna": {icon:"🎨", price:"Rs.350/100gm", cat:"Hair Colour"},
+  "Pure Indigo Powder": {icon:"💙", price:"Rs.350/100gm", cat:"Hair Colour"},
+  "Baby Massage Oil": {icon:"👶", price:"Rs.600/100ml", cat:"Baby Care"},
+  "Baby Bath Powder (Sunni Pindi)": {icon:"🌸", price:"Rs.350/100gm", cat:"Baby Care"},
+  "Blue Pea Refresh Tea": {icon:"🫖", price:"Rs.200/25gm", cat:"Wellness Tea"},
+  "Moringa Zen Fresh Tea": {icon:"🌿", price:"Rs.200/25gm", cat:"Wellness Tea"},
+  "Moringa Immunity Blend Tea": {icon:"💪", price:"Rs.200/25gm", cat:"Wellness Tea"},
+  "Hibiscus Serene Blend Tea": {icon:"🌺", price:"Rs.200/25gm", cat:"Wellness Tea"},
+  "Hibiscus Fusion Tea": {icon:"🫚", price:"Rs.200/25gm", cat:"Wellness Tea"},
+  "Blue Pea Classic Tea": {icon:"💙", price:"Rs.350/25gm", cat:"Wellness Tea"},
+  "Moringa Classic Tea": {icon:"🌿", price:"Rs.250/25gm", cat:"Wellness Tea"},
+  "Sunrise Natural Perfume": {icon:"🌅", price:"Rs.1200/10ml", cat:"Perfume"},
+  "Floral Natural Perfume": {icon:"🌸", price:"Rs.1200/10ml", cat:"Perfume"},
+  "Earthy Natural Perfume": {icon:"🌍", price:"Rs.1200/10ml", cat:"Perfume"},
+  "Focus Boost Natural Perfume": {icon:"🧠", price:"Rs.1200/10ml", cat:"Perfume"},
+  "Deep Sleep Natural Perfume": {icon:"😴", price:"Rs.1200/10ml", cat:"Perfume"},
+  "Lavender Foot Butter": {icon:"🦶", price:"Rs.450/30gm", cat:"Foot Care"},
+  "Beetroot Lip Balm": {icon:"❤️", price:"Rs.150/10gm", cat:"Lip Care"},
+  "Strawberry Lip Balm": {icon:"🍓", price:"Rs.150/10gm", cat:"Lip Care"},
+  "Lip Sleeping Mask": {icon:"💋", price:"Rs.250/15gm", cat:"Lip Care"}
+};
 
 let history = [];
 
-function setFilter(cat, el) {
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  if (cat !== 'all') {
-    const filtered = PRODUCTS.filter(p => p.cat === cat);
-    renderBot(`Here are our **${cat}** products — ${filtered.length} items crafted with natural Ayurvedic ingredients. Which interests you?`,
-      filtered.slice(0,6), false, [`Best seller in ${cat}`, `${cat} for sensitive skin`, `Ingredients in ${cat}`]);
-  }
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
 }
 
-function handleKey(e) { if (e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();} }
-function autoResize(el) { el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,90)+'px'; }
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 90) + 'px';
+}
+
+function quickSend(text, el) {
+  if (!text) return;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  document.getElementById('inp').value = text;
+  send();
+}
 
 async function send() {
   const inp = document.getElementById('inp');
   const text = inp.value.trim();
   if (!text) return;
-  inp.value=''; inp.style.height='auto';
-  const chat = document.getElementById('chat');
-  const um = document.createElement('div');
-  um.className='msg user';
-  um.innerHTML=`<div class="av user">🙋</div><div class="bubble">${text}</div>`;
-  chat.appendChild(um); chat.scrollTop=chat.scrollHeight;
-  history.push({role:'user',content:text});
+  inp.value = ''; inp.style.height = 'auto';
+
+  // Add user message to UI
+  addUserMsg(text);
+  history.push({ role: 'user', content: text });
+
   const typing = addTyping();
+
   try {
-    // Calls our secure Vercel backend — API key is hidden on server
-    const res = await fetch('/api/chat', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        messages:[{role:'system',content:SYSTEM},...history]
-      })
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history })
     });
-    const data = await res.json();
+
+    const data = await response.json();
     typing.remove();
-    if (!res.ok) { renderBot(`Sorry, something went wrong. Please contact naturecare@navavedamwellness.com`,[], true,[]); return; }
-    const raw = data.choices?.[0]?.message?.content || '{"reply":"Please try again.","show_contact":false,"products":[]}';
-    history.push({role:'assistant',content:raw});
-    let parsed;
-    try { parsed=JSON.parse(raw.replace(/```json|```/g,'').trim()); }
-    catch(e) { parsed={reply:raw,show_contact:false,products:[]}; }
-    const matchedProds=(parsed.products||[]).map(n=>PRODUCTS.find(p=>p.name.toLowerCase()===n.toLowerCase())).filter(Boolean);
-    renderBot(parsed.reply, matchedProds, parsed.show_contact, getSuggestions(text));
-  } catch(err) {
+
+    if (!response.ok) {
+      renderBot('Sorry, something went wrong. Please try again or contact naturecare@navavedamwellness.com', [], false);
+      return;
+    }
+
+    // Get raw content from Groq response
+    const raw = data.choices?.[0]?.message?.content || '';
+    history.push({ role: 'assistant', content: raw });
+
+    // Parse JSON response
+    let parsed = { reply: '', show_contact: false, products: [] };
+    try {
+      // Clean any markdown code fences
+      const clean = raw.replace(/```json\n?/gi, '').replace(/```\n?/gi, '').trim();
+      // Find JSON object
+      const jsonMatch = clean.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        parsed = JSON.parse(jsonMatch[0]);
+      } else {
+        parsed.reply = clean;
+      }
+    } catch (e) {
+      parsed.reply = raw;
+      parsed.show_contact = false;
+      parsed.products = [];
+    }
+
+    // Get matched products
+    const matchedProducts = (parsed.products || [])
+      .map(name => {
+        const key = Object.keys(PRODUCTS).find(k => k.toLowerCase() === name.toLowerCase());
+        return key ? { name: key, ...PRODUCTS[key] } : null;
+      })
+      .filter(Boolean);
+
+    renderBot(parsed.reply || 'I could not process that. Please try again.', matchedProducts, parsed.show_contact === true);
+
+  } catch (err) {
     typing.remove();
-    renderBot('Connection error. Please try again or contact naturecare@navavedamwellness.com',[],true,[]);
+    renderBot('Connection error. Please check your internet and try again.', [], false);
   }
 }
 
-function getSuggestions(msg) {
-  const m=msg.toLowerCase();
-  if(m.includes('hair')) return ['Hair growth tips','Anti dandruff','Hair fall solutions'];
-  if(m.includes('face')||m.includes('skin')) return ['For oily skin','For dry skin','Anti aging'];
-  if(m.includes('soap')||m.includes('body')) return ['Cold processed soaps','Bath salts','Body scrubs'];
-  if(m.includes('tea')||m.includes('wellness')) return ['Immunity teas','Morning tea','Wellness blends'];
-  if(m.includes('baby')) return ['Baby massage oil','Baby bath powder','Safe for newborns?'];
-  if(m.includes('perfume')) return ['Sleep perfume','Focus blend','Floral scents'];
-  return ['Best sellers','Gift ideas','Sensitive skin products'];
+function addUserMsg(text) {
+  const chat = document.getElementById('chat');
+  const div = document.createElement('div');
+  div.className = 'msg user';
+  div.innerHTML = `<div class="av user">🙋</div><div class="bubble">${escapeHtml(text)}</div>`;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
 }
 
-function renderBot(replyText, products, showContact, quickReplies) {
-  const chat=document.getElementById('chat');
-  const div=document.createElement('div');
-  div.className='msg bot';
-  const formatted=replyText.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
-  let prodHTML='';
-  if(products?.length) prodHTML=`<div class="prod-grid">${products.map(p=>`<div class="prod-card" onclick="askProduct('${p.name.replace(/'/g,"\\'")}')"><div class="icon">${p.icon}</div><div class="pname">${p.name}</div><div class="pprice">₹${p.mrp1}/${p.qty1}gm</div><div class="pcat">${p.sub}</div></div>`).join('')}</div>`;
-  let contactHTML='';
-  if(showContact) {
-    const id=Date.now();
-    contactHTML=`<div class="contact-form"><h4>📬 Contact Our Wellness Team</h4><input class="cf-input" id="cfn${id}" placeholder="Your name"><input class="cf-input" id="cfe${id}" placeholder="Your email" type="email"><textarea class="cf-textarea" id="cfm${id}" placeholder="Your question…"></textarea><button class="cf-btn" onclick="submitContact(this,'${id}')">Send Message 🌿</button></div>`;
+function renderBot(replyText, products, showContact) {
+  const chat = document.getElementById('chat');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+
+  const formatted = replyText
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
+
+  let prodHTML = '';
+  if (products && products.length > 0) {
+    prodHTML = `<div class="prod-grid">${products.map(p => `
+      <div class="prod-card" onclick="askProduct('${p.name.replace(/'/g,"\\'")}')">
+        <div class="icon">${p.icon}</div>
+        <div class="pname">${p.name}</div>
+        <div class="pprice">${p.price}</div>
+        <div class="pcat">${p.cat}</div>
+      </div>`).join('')}</div>`;
   }
-  let qrHTML='';
-  if(quickReplies?.length) qrHTML=`<div class="quick-replies">${quickReplies.map(q=>`<div class="qr" onclick="quickSend('${q.replace(/'/g,"\\'")}')">→ ${q}</div>`).join('')}</div>`;
-  div.innerHTML=`<div class="av bot">🌿</div><div class="bubble"><div class="bot-name">Navavedam AI</div><div>${formatted}</div>${prodHTML}${contactHTML}${qrHTML}</div>`;
-  chat.appendChild(div); chat.scrollTop=chat.scrollHeight;
+
+  let contactHTML = '';
+  if (showContact === true) {
+    const id = Date.now();
+    contactHTML = `
+      <div class="contact-form">
+        <h4>📬 Contact Our Wellness Team</h4>
+        <input class="cf-input" id="cfn${id}" placeholder="Your name">
+        <input class="cf-input" id="cfe${id}" placeholder="Your email" type="email">
+        <textarea class="cf-textarea" id="cfm${id}" placeholder="Your message…"></textarea>
+        <button class="cf-btn" onclick="submitContact(this,'${id}')">Send Message 🌿</button>
+      </div>`;
+  }
+
+  const suggestions = getSuggestions(replyText);
+  const qrHTML = suggestions.length ? `<div class="quick-replies">${suggestions.map(q =>
+    `<div class="qr" onclick="quickSend('${q.replace(/'/g,"\\'")}', null)">→ ${q}</div>`
+  ).join('')}</div>` : '';
+
+  div.innerHTML = `
+    <div class="av bot">🌿</div>
+    <div class="bubble">
+      <div class="bot-name">Veda · Navavedam AI</div>
+      <div>${formatted}</div>
+      ${prodHTML}${contactHTML}${qrHTML}
+    </div>`;
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
 }
 
 function addTyping() {
-  const chat=document.getElementById('chat');
-  const div=document.createElement('div');
-  div.className='typing-wrap';
-  div.innerHTML=`<div class="av bot">🌿</div><div class="typing-dots"><span></span><span></span><span></span></div>`;
-  chat.appendChild(div); chat.scrollTop=chat.scrollHeight;
+  const chat = document.getElementById('chat');
+  const div = document.createElement('div');
+  div.className = 'typing-wrap';
+  div.innerHTML = `<div class="av bot">🌿</div><div class="typing-dots"><span></span><span></span><span></span></div>`;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
   return div;
 }
 
-function askProduct(name) { document.getElementById('inp').value=`Tell me more about ${name}`; send(); }
-function quickSend(text) { document.getElementById('inp').value=text; send(); }
-function submitContact(btn, id) {
-  const name=document.getElementById('cfn'+id)?.value;
-  const email=document.getElementById('cfe'+id)?.value;
-  const msg=document.getElementById('cfm'+id)?.value;
-  if(!name||!email||!msg){alert('Please fill all fields.');return;}
-  btn.closest('.contact-form').innerHTML=`<p style="color:var(--forest);font-size:13px;">✅ Thank you <strong>${name}</strong>! Our team will reply to <strong>${email}</strong> within 24 hours. 🌿</p>`;
+function askProduct(name) {
+  document.getElementById('inp').value = `Tell me more about ${name}`;
+  send();
 }
 
-setTimeout(()=>{
-  renderBot(`Namaste! 🙏 Welcome to **Navavedam Wellness**.\n\nI'm your personal Ayurvedic wellness guide. I can help you with:\n\n🌿 **Product recommendations** based on your skin or hair type\n💰 **Pricing & ingredients** for any product\n🛍️ **Order & support** queries\n\nWhat are you looking for today?`,
-  [],false,['Face care products','Hair growth solutions','Wellness teas','Gift recommendations']);
-},300);
+function getSuggestions(reply) {
+  const r = reply.toLowerCase();
+  if (r.includes('hair fall') || r.includes('hair loss')) return ['What causes hair fall?', 'How long to use hair oil?', 'Which shampoo for hair fall?'];
+  if (r.includes('dandruff')) return ['How to use anti dandruff oil?', 'Which shampoo for dandruff?'];
+  if (r.includes('acne') || r.includes('oily')) return ['How to use neem face wash?', 'Which serum for acne?', 'What causes acne?'];
+  if (r.includes('dry') || r.includes('moisture')) return ['Which moisturiser is best?', 'How to use sleeping mask?'];
+  if (r.includes('pigmentation') || r.includes('dark spot')) return ['How long to see results?', 'Which serum for glow?'];
+  if (r.includes('aging') || r.includes('fine line')) return ['Tell me about Kumkumadi Serum', 'Anti aging routine?'];
+  return ['I have hair fall', 'My skin is oily', 'I want to improve glow', 'I have dry skin'];
+}
+
+function submitContact(btn, id) {
+  const name = document.getElementById('cfn' + id)?.value;
+  const email = document.getElementById('cfe' + id)?.value;
+  const msg = document.getElementById('cfm' + id)?.value;
+  if (!name || !email || !msg) { alert('Please fill all fields.'); return; }
+  btn.closest('.contact-form').innerHTML = `<p style="color:var(--forest);font-size:13px;">✅ Thank you <strong>${name}</strong>! Our team will reply to <strong>${email}</strong> within 24 hours. 🌿</p>`;
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Welcome message
+setTimeout(() => {
+  renderBot(
+    `Namaste! 🙏 I'm **Veda**, your personal Ayurvedic wellness advisor from Navavedam.\n\nI'm here to help you understand your skin and hair concerns honestly — and guide you toward the right natural solution.\n\nI'll ask you a few questions to understand your concern better before recommending anything. What brings you here today?`,
+    [], false
+  );
+}, 300);
 </script>
 </body>
 </html>
